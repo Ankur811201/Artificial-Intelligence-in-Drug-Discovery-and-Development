@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI in Drug Discovery &amp; Development — Academic Seminar</title>
+  <meta name="description" content="An academic seminar exploring how artificial intelligence helps researchers analyze data, prioritize candidates, and support decisions throughout drug discovery and development." />
+  <meta name="theme-color" content="#0A1628" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%2306b6d4'/%3E%3Ccircle cx='12' cy='14' r='2.5' fill='%230A1628'/%3E%3Ccircle cx='20' cy='14' r='2.5' fill='%230A1628'/%3E%3Ccircle cx='16' cy='20' r='2.5' fill='%230A1628'/%3E%3Cline x1='12' y1='14' x2='20' y2='14' stroke='%230A1628' stroke-width='1.5'/%3E%3Cline x1='12' y1='14' x2='16' y2='20' stroke='%230A1628' stroke-width='1.5'/%3E%3Cline x1='20' y1='14' x2='16' y2='20' stroke='%230A1628' stroke-width='1.5'/%3E%3C/svg%3E" />
+  <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============ SITE HEADER ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-row">
+      <a class="brand" href="#top" aria-label="Seminar home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28">
+            <circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="10" cy="12" r="2.2" fill="currentColor"/>
+            <circle cx="22" cy="12" r="2.2" fill="currentColor"/>
+            <circle cx="16" cy="22" r="2.2" fill="currentColor"/>
+            <line x1="10" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="10" y1="12" x2="16" y2="22" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="22" y1="12" x2="16" y2="22" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-title">AI in Drug Discovery</span>
+          <span class="brand-sub">Academic Seminar</span>
+        </span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#problem">Problem</a></li>
+          <li><a href="#how-ai">How AI Helps</a></li>
+          <li><a href="#pipeline">Process</a></li>
+          <li><a href="#applications">Applications</a></li>
+          <li><a href="#challenges">Challenges</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn btn-primary header-cta" id="openExperimentBtn" type="button">
+        <i data-lucide="play" aria-hidden="true"></i>
+        <span>Start Experiment</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <span id="top" tabindex="-1"></span>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="container hero-inner">
+        <p class="eyebrow"><span class="dot"></span> Academic Seminar Presentation</p>
+
+        <h1 id="heroTitle" class="hero-title">
+          Artificial Intelligence<br/>
+          in Drug Discovery<br/>
+          <span class="amp">&amp;</span> Development
+        </h1>
+
+        <p class="hero-lede">
+          Explore how artificial intelligence can help researchers analyze complex
+          biological and chemical data, prioritize promising candidates, and
+          support scientific decisions throughout drug discovery.
+        </p>
+
+        <div class="hero-cta">
+          <button class="btn btn-primary btn-lg" id="openExperimentHero" type="button">
+            <span>Start Experiment</span>
+            <i data-lucide="arrow-right" aria-hidden="true"></i>
+          </button>
+          <a class="btn btn-ghost btn-lg" href="#problem">
+            <span>Explore Research</span>
+          </a>
+        </div>
+
+        <!-- Conceptual workflow -->
+        <ol class="flow" aria-label="Conceptual workflow">
+          <li>
+            <span class="flow-icon" aria-hidden="true">
+              <i data-lucide="atom"></i>
+            </span>
+            <span class="flow-label">Molecules</span>
+          </li>
+          <li class="flow-arrow" aria-hidden="true"><i data-lucide="chevron-right"></i></li>
+          <li>
+            <span class="flow-icon flow-icon-accent" aria-hidden="true">
+              <i data-lucide="brain-circuit"></i>
+            </span>
+            <span class="flow-label">AI / ML</span>
+          </li>
+          <li class="flow-arrow" aria-hidden="true"><i data-lucide="chevron-right"></i></li>
+          <li>
+            <span class="flow-icon" aria-hidden="true">
+              <i data-lucide="line-chart"></i>
+            </span>
+            <span class="flow-label">Predictions</span>
+          </li>
+          <li class="flow-arrow" aria-hidden="true"><i data-lucide="chevron-right"></i></li>
+          <li>
+            <span class="flow-icon flow-icon-warn" aria-hidden="true">
+              <i data-lucide="list-ordered"></i>
+            </span>
+            <span class="flow-label">Prioritized Candidates</span>
+          </li>
+          <li class="flow-arrow" aria-hidden="true"><i data-lucide="chevron-right"></i></li>
+          <li>
+            <span class="flow-icon" aria-hidden="true">
+              <i data-lucide="flask-conical"></i>
+            </span>
+            <span class="flow-label">Scientific Validation</span>
+          </li>
+        </ol>
+
+        <p class="flow-meta">
+          <i data-lucide="clock-3" aria-hidden="true"></i>
+          Interactive educational simulation · about 60–90 seconds
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ THE PROBLEM ============ -->
+    <section class="section" id="problem" aria-labelledby="problemTitle">
+      <div class="container two-col mobile-stack">
+        <div class="col-text">
+          <p class="section-eyebrow">The Problem</p>
+          <h2 id="problemTitle" class="section-title">Why is drug discovery so difficult?</h2>
+          <p class="lede">
+            Drug discovery involves evaluating many possible candidates while
+            balancing <strong>activity</strong>, <strong>molecular properties</strong>,
+            <strong>safety</strong>, and other scientific requirements.
+          </p>
+          <p class="lede">
+            The overall <em>development</em> process can require extensive time,
+            money, expertise, and experimental work.
+          </p>
+          <p class="source-note">
+            <i data-lucide="info" aria-hidden="true"></i>
+            These figures describe the broader drug discovery and development
+            challenge — not the cost of screening a small candidate pool alone.
+            See <a href="#references">References</a>.
+          </p>
+        </div>
+
+        <div class="col-visual" aria-hidden="false">
+          <div class="burden-cards">
+            <article class="burden">
+              <span class="burden-icon"><i data-lucide="hourglass"></i></span>
+              <h3 class="burden-label">Time</h3>
+              <p class="burden-value">10<span class="unit">+ years</span></p>
+              <p class="burden-note">From initial research to approved medicine</p>
+            </article>
+            <article class="burden burden-amber">
+              <span class="burden-icon"><i data-lucide="banknote"></i></span>
+              <h3 class="burden-label">Cost</h3>
+              <p class="burden-value">&gt;$2<span class="unit">billion</span></p>
+              <p class="burden-note">Estimated development cost per approved drug</p>
+            </article>
+            <article class="burden burden-red">
+              <span class="burden-icon"><i data-lucide="alert-triangle"></i></span>
+              <h3 class="burden-label">Attrition</h3>
+              <p class="burden-value"><span class="unit">≈</span>10<span class="unit">%</span></p>
+              <p class="burden-note">Of candidates entering clinical trials ultimately approved</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW AI HELPS ============ -->
+    <section class="section section-alt" id="how-ai" aria-labelledby="howAiTitle">
+      <div class="container">
+        <p class="section-eyebrow">How AI Helps</p>
+        <h2 id="howAiTitle" class="section-title">How can AI help?</h2>
+
+        <div class="transform" role="list">
+          <div class="t-node" role="listitem"><span>Large Datasets</span></div>
+          <i class="t-arrow" data-lucide="arrow-down" aria-hidden="true"></i>
+          <div class="t-node t-node-accent" role="listitem"><span>AI / Machine Learning</span></div>
+          <i class="t-arrow" data-lucide="arrow-down" aria-hidden="true"></i>
+          <div class="t-node" role="listitem"><span>Pattern Recognition</span></div>
+          <i class="t-arrow" data-lucide="arrow-down" aria-hidden="true"></i>
+          <div class="t-node" role="listitem"><span>Predictions</span></div>
+          <i class="t-arrow" data-lucide="arrow-down" aria-hidden="true"></i>
+          <div class="t-node t-node-warn" role="listitem"><span>Prioritization</span></div>
+          <i class="t-arrow" data-lucide="arrow-down" aria-hidden="true"></i>
+          <div class="t-node" role="listitem"><span>Focused Research</span></div>
+        </div>
+
+        <p class="lede center max-680">
+          AI can process complex biological and chemical data, identify patterns,
+          estimate properties, and help researchers prioritize candidates for
+          further investigation.
+        </p>
+
+        <blockquote class="big-quote">
+          AI does not remove experiments.<br/>
+          It helps researchers decide <em>where to investigate first.</em>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============ PIPELINE ============ -->
+    <section class="section" id="pipeline" aria-labelledby="pipelineTitle">
+      <div class="container">
+        <p class="section-eyebrow">Process</p>
+        <h2 id="pipelineTitle" class="section-title">An AI-assisted drug discovery pipeline</h2>
+        <p class="lede max-680">
+          AI tools can support many stages. Below is a simplified illustration
+          of where AI commonly contributes to a discovery and development
+          workflow.
+        </p>
+
+        <ol class="pipeline">
+          <li class="stage">
+            <span class="stage-num">01</span>
+            <div>
+              <h3>Target Identification</h3>
+              <p>Identify a biological target relevant to a disease.</p>
+            </div>
+          </li>
+          <li class="stage">
+            <span class="stage-num">02</span>
+            <div>
+              <h3>Virtual Screening</h3>
+              <p>Computationally evaluate candidate molecules against the target.</p>
+            </div>
+          </li>
+          <li class="stage">
+            <span class="stage-num">03</span>
+            <div>
+              <h3>Molecular Property Prediction</h3>
+              <p>Estimate solubility, activity, toxicity, and other key properties.</p>
+            </div>
+          </li>
+          <li class="stage">
+            <span class="stage-num">04</span>
+            <div>
+              <h3>Lead Optimization</h3>
+              <p>Refine promising candidates to improve desired properties.</p>
+            </div>
+          </li>
+          <li class="stage">
+            <span class="stage-num">05</span>
+            <div>
+              <h3>Preclinical Safety Assessment</h3>
+              <p>Support scientists assessing safety signals before human studies.</p>
+            </div>
+          </li>
+          <li class="stage">
+            <span class="stage-num">06</span>
+            <div>
+              <h3>Drug Development</h3>
+              <p>Move toward clinical and regulatory evaluation with experimental evidence.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ KEY APPLICATIONS ============ -->
+    <section class="section section-alt" id="applications" aria-labelledby="appsTitle">
+      <div class="container">
+        <p class="section-eyebrow">Applications</p>
+        <h2 id="appsTitle" class="section-title">Where AI contributes today</h2>
+
+        <div class="app-grid">
+          <article class="app-card">
+            <span class="app-icon"><i data-lucide="target"></i></span>
+            <h3>Target Identification</h3>
+            <p>Finding biological targets associated with a disease using genomic, proteomic, and literature data.</p>
+          </article>
+          <article class="app-card">
+            <span class="app-icon"><i data-lucide="scan-search"></i></span>
+            <h3>Virtual Screening</h3>
+            <p>Computationally evaluating large virtual libraries against a target to focus downstream work.</p>
+          </article>
+          <article class="app-card">
+            <span class="app-icon"><i data-lucide="test-tube-2"></i></span>
+            <h3>Molecular Property Prediction</h3>
+            <p>Estimating activity, solubility, toxicity, and drug-like properties before laboratory testing.</p>
+          </article>
+          <article class="app-card">
+            <span class="app-icon"><i data-lucide="sliders-horizontal"></i></span>
+            <h3>Lead Optimization</h3>
+            <p>Suggesting structural modifications to improve the profile of promising candidates.</p>
+          </article>
+          <article class="app-card">
+            <span class="app-icon"><i data-lucide="shield-check"></i></span>
+            <h3>Preclinical Safety</h3>
+            <p>Assisting the assessment of safety indicators prior to clinical trials.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONVENTIONAL VS AI-ASSISTED ============ -->
+    <section class="section" id="compare" aria-labelledby="compareTitle">
+      <div class="container">
+        <p class="section-eyebrow">Comparison</p>
+        <h2 id="compareTitle" class="section-title">What changes with AI?</h2>
+
+        <div class="compare">
+          <article class="compare-col">
+            <h3 class="compare-h">
+              <i data-lucide="microscope" aria-hidden="true"></i>
+              Conventional Workflow
+            </h3>
+            <ol class="compare-flow">
+              <li>Candidate Library</li>
+              <li>Scientific Screening</li>
+              <li>Experimental Testing</li>
+              <li>Analysis</li>
+              <li>Optimization</li>
+            </ol>
+          </article>
+          <article class="compare-col compare-col-accent">
+            <h3 class="compare-h">
+              <i data-lucide="brain-circuit" aria-hidden="true"></i>
+              AI-assisted Workflow
+            </h3>
+            <ol class="compare-flow">
+              <li>Candidate Library</li>
+              <li class="accent">Computational Screening</li>
+              <li class="accent">Candidate Prioritization</li>
+              <li>Focused Experimental Testing</li>
+              <li>Analysis</li>
+              <li>Optimization</li>
+            </ol>
+          </article>
+        </div>
+
+        <p class="callout">
+          <i data-lucide="info" aria-hidden="true"></i>
+          AI does not replace the conventional workflow. It can help narrow and
+          prioritize the search <em>before</em> expensive experimental
+          investigation.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ BENEFITS ============ -->
+    <section class="section section-alt" id="benefits" aria-labelledby="benefitsTitle">
+      <div class="container">
+        <p class="section-eyebrow">Benefits</p>
+        <h2 id="benefitsTitle" class="section-title">Potential benefits of AI assistance</h2>
+        <p class="lede max-680">
+          AI may help reduce time, cost, and effort by improving efficiency and
+          focusing experimental work on more promising candidates.
+        </p>
+
+        <div class="benefit-grid">
+          <article class="benefit">
+            <span class="benefit-icon"><i data-lucide="crosshair"></i></span>
+            <h3>More Focused Search</h3>
+            <p>Investigate a smaller, higher-priority set of candidates.</p>
+          </article>
+          <article class="benefit">
+            <span class="benefit-icon"><i data-lucide="repeat-2"></i></span>
+            <h3>Reduced Repetitive Analysis</h3>
+            <p>Automate routine computational analysis of candidate properties.</p>
+          </article>
+          <article class="benefit">
+            <span class="benefit-icon"><i data-lucide="list-checks"></i></span>
+            <h3>Better Candidate Prioritization</h3>
+            <p>Rank candidates using learned patterns from biological and chemical data.</p>
+          </article>
+          <article class="benefit">
+            <span class="benefit-icon"><i data-lucide="compass"></i></span>
+            <h3>Support for Research Decisions</h3>
+            <p>Provide additional computational evidence to inform experimental plans.</p>
+          </article>
+        </div>
+
+        <p class="source-note">
+          <i data-lucide="info" aria-hidden="true"></i>
+          We do not claim specific percentage savings. The exact impact
+          depends on the disease, data, and research context.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CHALLENGES ============ -->
+    <section class="section" id="challenges" aria-labelledby="challengesTitle">
+      <div class="container">
+        <p class="section-eyebrow">Challenges</p>
+        <h2 id="challengesTitle" class="section-title">
+          If AI is powerful, why is drug discovery still hard?
+        </h2>
+
+        <div class="challenge-grid" id="challengeGrid">
+          <button class="challenge" type="button" data-target="c-data">
+            <span class="challenge-icon"><i data-lucide="database"></i></span>
+            <h3>Data Quality</h3>
+            <p class="challenge-tag">Tap to expand</p>
+            <div class="challenge-body" id="c-data" hidden>
+              Models depend on training data. Missing, biased, or noisy data
+              can lead to unreliable predictions.
+            </div>
+          </button>
+          <button class="challenge" type="button" data-target="c-interp">
+            <span class="challenge-icon"><i data-lucide="eye"></i></span>
+            <h3>Interpretability</h3>
+            <p class="challenge-tag">Tap to expand</p>
+            <div class="challenge-body" id="c-interp" hidden>
+              Many AI models are difficult to interpret. Scientists must
+              understand why a model makes a prediction before trusting it.
+            </div>
+          </button>
+          <button class="challenge" type="button" data-target="c-val">
+            <span class="challenge-icon"><i data-lucide="flask-conical"></i></span>
+            <h3>Validation</h3>
+            <p class="challenge-tag">Tap to expand</p>
+            <div class="challenge-body" id="c-val" hidden>
+              Computational predictions must always be tested with rigorous
+              experiments before any clinical use.
+            </div>
+          </button>
+          <button class="challenge" type="button" data-target="c-reg">
+            <span class="challenge-icon"><i data-lucide="scroll-text"></i></span>
+            <h3>Regulatory Acceptance</h3>
+            <p class="challenge-tag">Tap to expand</p>
+            <div class="challenge-body" id="c-reg" hidden>
+              Regulators require strong evidence of safety, efficacy, and
+              reproducibility for any new medicine.
+            </div>
+          </button>
+          <button class="challenge" type="button" data-target="c-eth">
+            <span class="challenge-icon"><i data-lucide="scale"></i></span>
+            <h3>Ethical Considerations</h3>
+            <p class="challenge-tag">Tap to expand</p>
+            <div class="challenge-body" id="c-eth" hidden>
+              AI raises questions about data privacy, equitable access, and
+              responsible use of automated decision-making in healthcare.
+            </div>
+          </button>
+        </div>
+
+        <p class="callout callout-quote">
+          AI predictions are <strong>computational evidence</strong> —
+          not <strong>experimental proof</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ AI + SCIENTISTS ============ -->
+    <section class="section section-alt" id="human-ai" aria-labelledby="humanAiTitle">
+      <div class="container">
+        <p class="section-eyebrow">Collaboration</p>
+        <h2 id="humanAiTitle" class="section-title">AI and scientists</h2>
+
+        <div class="duo">
+          <article class="duo-col duo-ai">
+            <h3><i data-lucide="brain-circuit" aria-hidden="true"></i> AI</h3>
+            <ul>
+              <li>Analyzes data</li>
+              <li>Finds patterns</li>
+              <li>Predicts properties</li>
+              <li>Ranks candidates</li>
+            </ul>
+          </article>
+          <div class="duo-plus" aria-hidden="true">+</div>
+          <article class="duo-col duo-human">
+            <h3><i data-lucide="user-round" aria-hidden="true"></i> Scientists</h3>
+            <ul>
+              <li>Define research questions</li>
+              <li>Design experiments</li>
+              <li>Test candidates</li>
+              <li>Interpret evidence</li>
+              <li>Validate results</li>
+            </ul>
+          </article>
+        </div>
+
+        <blockquote class="big-quote">
+          AI supports the scientist.<br/>
+          It does <em>not</em> replace the scientist.
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============ CONCLUSION ============ -->
+    <section class="section conclusion" aria-labelledby="conclusionTitle">
+      <div class="container narrow center">
+        <h2 id="conclusionTitle" class="conclusion-title">
+          AI accelerates the search.<br/>
+          Science validates the answer.
+        </h2>
+        <p class="lede">
+          Artificial intelligence can support multiple stages of drug discovery
+          by analyzing data, predicting properties, prioritizing candidates, and
+          assisting scientific decisions.
+        </p>
+        <p class="lede">
+          Its strongest role is as a <strong>complementary tool</strong>
+          working alongside researchers.
+        </p>
+
+        <div class="hero-cta center">
+          <button class="btn btn-primary btn-lg" id="openExperimentConclusion" type="button">
+            <span>Start the Experiment</span>
+            <i data-lucide="arrow-right" aria-hidden="true"></i>
+          </button>
+          <a class="btn btn-ghost btn-lg" href="#references">View References</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABSTRACT ============ -->
+    <section class="section section-alt" id="abstract" aria-labelledby="abstractTitle">
+      <div class="container narrow">
+        <p class="section-eyebrow">Abstract</p>
+        <h2 id="abstractTitle" class="section-title">Seminar abstract</h2>
+
+        <div class="abstract-box" id="abstractBox" contenteditable="false">
+          <!-- PLACEHOLDER: replace this block with the final seminar abstract text supplied for the project. -->
+          <p class="lede">
+            <em>[INSERT FINAL SEMINAR ABSTRACT HERE — replace this entire block with the
+            abstract text supplied for the seminar project. The final abstract
+            should describe the topic, motivation, AI's role in drug discovery
+            and development, and the seminar's central message.]</em>
+          </p>
+        </div>
+
+        <p class="source-note">
+          <i data-lucide="pencil-line" aria-hidden="true"></i>
+          Replace this placeholder with the final seminar abstract before
+          publishing. The placeholder is clearly marked so it is never mistaken
+          for the final abstract.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ REFERENCES ============ -->
+    <section class="section" id="references" aria-labelledby="refsTitle">
+      <div class="container">
+        <p class="section-eyebrow">References</p>
+        <h2 id="refsTitle" class="section-title">References</h2>
+        <p class="lede max-680">
+          The references below are <strong>placeholders</strong> drawn from the
+          seminar material. Replace each one with the verified source from the
+          seminar handout.
+        </p>
+
+        <ol class="refs" id="refsList">
+          <li>
+            <span class="ref-tag">Time &amp; Cost</span>
+            <p class="ref-text">
+              <em>[Reference 1 — verified source from seminar material]</em>.
+              Source supporting the figure of <strong>10+ years</strong> and
+              <strong>&gt;US$2 billion</strong> average development cost for a
+              new medicine.
+            </p>
+          </li>
+          <li>
+            <span class="ref-tag">Attrition</span>
+            <p class="ref-text">
+              <em>[Reference 2 — verified source from seminar material]</em>.
+              Source supporting the figure that only about
+              <strong>10%</strong> of candidates entering clinical trials
+              ultimately achieve regulatory approval.
+            </p>
+          </li>
+          <li>
+            <span class="ref-tag">AI in Drug Discovery</span>
+            <p class="ref-text">
+              <em>[Reference 3 — verified source from seminar material]</em>.
+              Review or overview describing how machine-learning methods are
+              applied across the drug discovery and development pipeline.
+            </p>
+          </li>
+          <li>
+            <span class="ref-tag">Virtual Screening &amp; Property Prediction</span>
+            <p class="ref-text">
+              <em>[Reference 4 — verified source from seminar material]</em>.
+              Source describing AI-based virtual screening and molecular
+              property prediction.
+            </p>
+          </li>
+          <li>
+            <span class="ref-tag">Challenges &amp; Limits</span>
+            <p class="ref-text">
+              <em>[Reference 5 — verified source from seminar material]</em>.
+              Source discussing data quality, interpretability, validation,
+              and regulatory challenges of AI in drug discovery.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ TEAM / INSTITUTION ============ -->
+    <section class="section section-alt" id="team" aria-labelledby="teamTitle">
+      <div class="container">
+        <p class="section-eyebrow">Team</p>
+        <h2 id="teamTitle" class="section-title">Team &amp; institution</h2>
+
+        <div class="team-grid">
+          <div class="team-card">
+            <span class="team-icon"><i data-lucide="users"></i></span>
+            <h3>Team Members</h3>
+            <p class="team-placeholder"><em>[Insert team member names here]</em></p>
+          </div>
+          <div class="team-card">
+            <span class="team-icon"><i data-lucide="building-2"></i></span>
+            <h3>Department</h3>
+            <p class="team-placeholder"><em>[Insert department]</em></p>
+          </div>
+          <div class="team-card">
+            <span class="team-icon"><i data-lucide="graduation-cap"></i></span>
+            <h3>College</h3>
+            <p class="team-placeholder"><em>[Insert college name]</em></p>
+          </div>
+          <div class="team-card">
+            <span class="team-icon"><i data-lucide="school"></i></span>
+            <h3>University</h3>
+            <p class="team-placeholder"><em>[Insert university name]</em></p>
+          </div>
+          <div class="team-card">
+            <span class="team-icon"><i data-lucide="calendar-days"></i></span>
+            <h3>Seminar / Event</h3>
+            <p class="team-placeholder"><em>[Insert seminar name &amp; date]</em></p>
+          </div>
+          <div class="team-card">
+            <span class="team-icon"><i data-lucide="image"></i></span>
+            <h3>Poster</h3>
+            <p class="team-placeholder"><em>[Insert final poster reference]</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-row">
+        <div>
+          <p class="footer-title">AI in Drug Discovery &amp; Development</p>
+          <p class="footer-sub">Academic Seminar Presentation</p>
+        </div>
+        <p class="footer-meta">
+          <span>Educational Simulation</span> · <span>No real AI APIs used</span>
+        </p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ============ EXPERIMENT OVERLAY ============ -->
+  <div id="experiment" class="experiment" hidden aria-modal="true" role="dialog" aria-labelledby="expTitle">
+    <div class="exp-shell">
+      <header class="exp-header">
+        <span class="exp-badge"><i data-lucide="beaker"></i> Educational Simulation</span>
+        <button class="exp-exit" id="exitExperimentBtn" type="button" aria-label="Exit experiment">
+          <i data-lucide="x" aria-hidden="true"></i>
+          <span class="exp-exit-text">Exit</span>
+        </button>
+      </header>
+
+      <div class="exp-progress" aria-hidden="true">
+        <div class="exp-progress-track">
+          <div class="exp-progress-fill" id="expProgressFill"></div>
+        </div>
+        <div class="exp-progress-dots" id="expProgressDots"></div>
+      </div>
+
+      <main class="exp-stage" id="expStage" aria-live="polite">
+        <!-- dynamic content -->
+      </main>
+    </div>
+  </div>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+</body>
+</html>
